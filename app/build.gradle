@@ -12,6 +12,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -26,8 +27,24 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    // firebase analytics
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // firebase database
+    implementation 'com.google.firebase:firebase-database:19.2.1'
+    // firebasse auth
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    // firebase fire store
+    implementation 'com.google.firebase:firebase-firestore:21.4.3'
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    // Multidex
+    implementation 'com.android.support:multidex:1.0.3'
+
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -36,3 +53,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
 
 }
+
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.android.application'

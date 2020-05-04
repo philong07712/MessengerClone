@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "923376525556",
+    "firebase_url": "https://messengerclone-8a5a6.firebaseio.com",
+    "project_id": "messengerclone-8a5a6",
+    "storage_bucket": "messengerclone-8a5a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923376525556:android:9a85a584e6cfea9f207ea1",
+        "android_client_info": {
+          "package_name": "com.example.clonemessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923376525556-hq3nqs4ticbdrqkjmb8tmufe41plknvi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACh19kOm3wHLSHu-vzOIItMOFAgmv4ojg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923376525556-hq3nqs4ticbdrqkjmb8tmufe41plknvi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
