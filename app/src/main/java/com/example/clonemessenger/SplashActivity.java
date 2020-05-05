@@ -38,11 +38,23 @@ public class SplashActivity extends AppCompatActivity {
                 updateLogin();
             }
         });
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateRegister();
+            }
+        });
     }
 
     private void updateLogin()
     {
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+    }
+
+    private void updateRegister()
+    {
+        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
         startActivity(intent);
     }
 
