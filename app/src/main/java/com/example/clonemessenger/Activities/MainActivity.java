@@ -1,4 +1,4 @@
-package com.example.clonemessenger;
+package com.example.clonemessenger.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.clonemessenger.Fragment.FragmentChat;
 import com.example.clonemessenger.Fragment.FragmentEveryone;
+import com.example.clonemessenger.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
