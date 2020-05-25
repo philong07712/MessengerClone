@@ -1,10 +1,17 @@
 package com.example.clonemessenger.viewmodels;
 
+import android.view.View;
+
+import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
 import com.example.clonemessenger.BR;
 import com.example.clonemessenger.Models.User;
+import com.example.clonemessenger.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -16,13 +23,12 @@ public class RegisterViewModel extends BaseObservable {
     @Bindable
     private String password2;
 
+    @Bindable
+    private boolean isLoading;
+
     // FireBase
     FirebaseAuth mAuth;
 
-
-
-    private String successMessage = "Register Successful";
-    private String failedMessage = "Register failed";
 
     @Bindable
     private String toastMessage = null;
@@ -32,7 +38,19 @@ public class RegisterViewModel extends BaseObservable {
         password = "";
         password2 = "";
         mAuth = FirebaseAuth.getInstance();
+        isLoading = false;
 
+    }
+
+    public boolean isLoading()
+    {
+        return this.isLoading;
+    }
+
+    public void setIsLoading(boolean isLoad)
+    {
+        this.isLoading = isLoad;
+        notifyPropertyChanged(BR.isLoading);
     }
 
     public String getToastMessage() {
@@ -97,9 +115,23 @@ public class RegisterViewModel extends BaseObservable {
     {
         if (!this.user.getEmail().isEmpty() && this.password.equals(this.password2) && !this.getUserName().isEmpty())
         {
-            setToastMessage("Register completed");
+            registerUser(user.getName(), user.getEmail(), password);
+            setIsLoading(true);
+            setToastMessage(Boolean.toString(isLoading));
         }
     }
 
+    private void registerUser(String name, String email, String password)
+    {
+//        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                if (task.isSuccessful())
+//                {
+//                    // create User successful
+//                }
+//            }
+//        });
+    }
 
 }
